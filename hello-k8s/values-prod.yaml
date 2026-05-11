@@ -1,3 +1,5 @@
+fullnameOverride: hello-prod
+appName: hello-prod
 replicaCount: 5
 
 image:

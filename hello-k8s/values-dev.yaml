@@ -1,3 +1,5 @@
+fullnameOverride: hello-dev
+appName: hello-dev
 replicaCount: 1
 
 image:

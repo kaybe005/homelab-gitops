@@ -15,7 +15,7 @@ spec:
         {{- include "hello-k8s.selectorLabels" . | nindent 8 }}
     spec:
       containers:
-        - name: hello-k8s
+        - name: {{ .Values.appName }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
