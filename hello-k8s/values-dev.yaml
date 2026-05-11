@@ -14,7 +14,7 @@ service:
 ingress:
   enabled: true
   className: traefik
-  host: hello.home.lab
+  host: hello-dev.home.lab
 
 resources:
   requests:
