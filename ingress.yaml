@@ -1,29 +1,17 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  annotations:
-    kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"networking.k8s.io/v1","kind":"Ingress","metadata":{"annotations":{},"name":"hello-k8s","namespace":"default"},"spec":{"rules":[{"host":"hello.home.lab","http":{"paths":[{"backend":{"service":{"name":"hello-k8s","port":{"number":80}}},"path":"/","pathType":"Prefix"}]}}]}}
-  creationTimestamp: "2026-05-08T07:34:55Z"
-  generation: 1
   name: hello-k8s
-  namespace: default
-  resourceVersion: "1134"
-  uid: 37384600-0ece-42be-a260-a5b264f481fb
 spec:
   ingressClassName: traefik
   rules:
-  - host: hello.home.lab
-    http:
-      paths:
-      - backend:
-          service:
-            name: hello-k8s
-            port:
-              number: 80
-        path: /
-        pathType: Prefix
-status:
-  loadBalancer:
-    ingress:
-    - ip: 192.168.1.43
+    - host: hello.home.lab
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hello-k8s
+                port:
+                  number: 80
