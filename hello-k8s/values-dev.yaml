@@ -3,13 +3,14 @@ appName: hello-dev
 replicaCount: 1
 
 image:
-  repository: nginx
-  tag: "1.27"
-  pullPolicy: IfNotPresent
+  repository: ghcr.io/kaybe005/hello-app
+  tag: "latest"
+  pullPolicy: Always
 
 service:
   type: ClusterIP
   port: 80
+  targetPort: 3000
 
 ingress:
   enabled: true
